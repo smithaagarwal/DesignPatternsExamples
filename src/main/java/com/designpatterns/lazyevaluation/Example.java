@@ -1,4 +1,4 @@
-package com.techreturners;
+package com.designpatterns.lazyevaluation;
 
 public class Example {
     public static int compute(int number) {
