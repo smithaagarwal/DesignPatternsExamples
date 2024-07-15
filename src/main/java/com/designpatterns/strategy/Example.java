@@ -5,12 +5,10 @@ import java.util.function.Predicate;
 
 public class Example {
     public static int totalValues(List<Integer> numbers, Predicate<Integer> selector) {
-        int total = 0;
-        for (int number : numbers) {
-            if (selector.test(number))
-                total += number;
-        }
-        return total;
+        return numbers.stream()
+                .filter(selector)
+                .mapToInt(e -> e)
+                .sum();
     }
 
     public static boolean isOdd(int number) {
